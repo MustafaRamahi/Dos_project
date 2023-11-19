@@ -1,0 +1,26 @@
+services:
+
+  catalog:
+    build:
+      context: ./Catalog
+    command: [ "npm", "run", "start" ]
+    ports:
+      - 8085:3000
+    expose:
+      - 3000
+  order:
+    build:
+      context: ./Order
+    command: [ "npm", "run", "start" ]
+    ports:
+      - 8083:3000
+    expose:
+      - 3000
+  fronrend:
+    build:
+      context: ./Fronrend
+    command: [ "npm", "run", "start" ]
+    ports:
+      - 8081:3000
+    expose:
+      - 3000
