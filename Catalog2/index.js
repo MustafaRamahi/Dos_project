@@ -2,7 +2,7 @@ const express = require('express')
 const books = require('./books')
 
 var app = express()
-const port = 3000
+const port = 3001
 
 app.use(express.json())
 
@@ -33,13 +33,9 @@ app.put('/update/:item_number', (req, res) => {
     } else {
         books.updateBook(item_number, updates)
         res.send()
-        console.log('book update succsfully')
     }
-    
 })
 
 app.listen(port, () => {
     console.log('Server has started at port ', port)
 })
-console.log(books.searchBooks('Distributed systems'));
-console.log(books.infoBook(3))
